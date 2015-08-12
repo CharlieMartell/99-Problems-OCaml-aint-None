@@ -1,5 +1,5 @@
-(*Write a function last : 'a list -> 'a option 
- * that returns the last element of a list.*) 
+(* Write a function last : 'a list -> 'a option 
+ * that returns the last element of a list. *) 
 
 let rec last = function
   | [] -> None
@@ -7,6 +7,7 @@ let rec last = function
   | _ :: y -> last y
 ;;
 
+(* Tests all cases *)
 assert (last [ `a; `b; `c]  = Some `c);;
 assert (last [`a] = Some `a);;
 assert (last [] = None);;
