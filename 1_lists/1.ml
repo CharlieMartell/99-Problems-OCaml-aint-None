@@ -4,5 +4,9 @@
 let rec last = function
   | [] -> None
   | [x] -> Some x
-  | _ :: y -> last y;;
+  | _ :: y -> last y
+;;
 
+assert (last [ `a; `b; `c]  = Some `c);;
+assert (last [`a] = Some `a);;
+assert (last [] = None);;
