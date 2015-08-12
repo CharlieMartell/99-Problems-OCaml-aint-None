@@ -1,5 +1,13 @@
 (* Find the number of elements of a list. *)
 
+(* 
+Examples from the book
+# length [ "a" ; "b" ; "c"];;
+- : int = 3
+# length [];;
+- : int = 0
+*)
+
 let length l = 
   let rec rlength i = function
       | [] -> 0

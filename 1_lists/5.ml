@@ -1,5 +1,11 @@
 (* Reverse a list. *)
 
+(* 
+Examples from the book
+# rev ["a" ; "b" ; "c"];;
+- : string list = ["c"; "b"; "a"]
+*)
+
 let rev l =
   let rec rrev rest = function
     | [] -> rest

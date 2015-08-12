@@ -1,5 +1,13 @@
 (* Find the k'th element of a list. *)
 
+(* 
+Examples from the book
+# at 3 [ "a" ; "b"; "c"; "d"; "e" ];;
+- : string option = Some "c"
+# at 3 [ "a" ];;
+- : string option = None
+*)
+
 let rec kth k = function
   | [] -> None
   | x :: xs -> if k = 0
