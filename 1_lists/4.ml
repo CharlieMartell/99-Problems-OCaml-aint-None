@@ -8,11 +8,10 @@ Examples from the book
 - : int = 0
 *)
 
-let length l = 
-  let rec rlength i = function
+let rec length l = 
+  match l with
       | [] -> 0
-      | _ :: xs -> rlength (i + 1) xs
-  in rlength 0 l
+      | _ :: xs -> 1 + length xs
 ;;
 
 (* Tests all cases *)
