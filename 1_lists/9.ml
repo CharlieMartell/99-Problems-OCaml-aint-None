@@ -12,7 +12,7 @@ let pack lst =
   let rev l =
     let rec rrev rest = function
       | [] -> rest
-     | x :: xs -> rrev (x::rest) xs
+      | x :: xs -> rrev (x::rest) xs
     in rrev [] l
   in 
   let rec rpack pre suf cur_val lst =
