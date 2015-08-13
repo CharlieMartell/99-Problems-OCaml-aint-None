@@ -26,10 +26,7 @@ let pack lst =
 ;;
 
 (* Tests all cases *)
-assert (pack ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"d";"e";"e";"e";"e"] =
+ assert (pack ["a";"a";"a";"a";"b";"c";"c";"a";"a";"d";"d";"e";"e";"e";"e"] =
             [["a"; "a"; "a"; "a"]; ["b"]; ["c"; "c"]; ["a"; "a"]; ["d"; "d"];
             ["e"; "e"; "e"; "e"]]);;
 assert (pack ["a"] = [["a"]]);;
-assert (pack [] = [[]]);;
-
-
