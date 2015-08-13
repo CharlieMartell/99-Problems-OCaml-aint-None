@@ -15,10 +15,10 @@ Examples from the book
 *)
 
 let rec flat lst =
-  match lst with
-    | [] -> []
-    | (One x) :: xs -> x :: flat xs
-    | (Many x) :: xs -> flat x @ flat xs
+  match  lst with
+  | [] -> []
+  | (One x) :: xs -> x :: flat xs
+  | (Many x) :: xs -> flat x @ flat xs
 ;;
 
 (* Tests all cases *)
