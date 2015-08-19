@@ -7,7 +7,9 @@ Examples from the book
   [(4, "a"); (1, "b"); (2, "c"); (2, "a"); (1, "d"); (4, "e")]
 *)
 
-(* Helper function from prior exercise *)
+(* Helper functions from prior exercise *)
+
+(* Reverse a list. *)
 let rev l =
   let rec rrev rest = function
     | [] -> rest

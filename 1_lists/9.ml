@@ -9,6 +9,8 @@ Examples from the book
 *)
 
 (* Helper function from prior exercise *)
+
+(* Reverse a list. *)
 let rev l =
   let rec rrev rest = function
     | [] -> rest

@@ -15,13 +15,17 @@ Examples from the book
 *)
 
 (* Helper functions from prior exercises *)
+
+(* Reverse a list. *)
+let rev l =
+  let rec rrev rest = function
+    | [] -> rest
+    | x :: xs -> rrev (x::rest) xs
+  in rrev [] l
+;;
+
+(* Pack consecutive duplicates of list elements into sublists. *)
 let pack lst =
-  let rev l =
-    let rec rrev rest = function
-      | [] -> rest
-      | x :: xs -> rrev (x::rest) xs
-    in rrev [] l
-  in 
     let rec rpack pre suf cur_val lst =
        match lst with
          | [] -> rev (suf :: pre)
@@ -32,12 +36,14 @@ let pack lst =
       | x :: xs -> rpack [] [x] x xs
 ;;
 
+(* Find the number of elements of a list. *)
 let rec length l = 
   match l with
       | [] -> 0
       | _ :: xs -> 1 + length xs
 ;;
 
+(* Find the k'th element of a list. *)
 let rec kth k = function
   | [] -> None
   | x :: xs -> if k = 0
