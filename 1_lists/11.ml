@@ -51,6 +51,7 @@ let rec kth k = function
                else kth (k - 1) xs
 ;;
 
+(* Main Function *)
 (* Uses idea of right associative cons *)
 let encode lst =
   let hd = function 
