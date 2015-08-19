@@ -8,21 +8,24 @@ Examples from the book
    ["e"; "e"; "e"; "e"]]
 *)
 
+(* Helper function from prior exercise *)
+let rev l =
+  let rec rrev rest = function
+    | [] -> rest
+    | x :: xs -> rrev (x::rest) xs
+  in rrev [] l
+;;
+
+(* Main function *)
 let pack lst =
-  let rev l =
-    let rec rrev rest = function
-      | [] -> rest
-      | x :: xs -> rrev (x::rest) xs
-    in rrev [] l
-  in 
-    let rec rpack pre suf cur_val lst =
-       match lst with
-         | [] -> rev (suf :: pre)
-         | x :: xs when x = cur_val -> rpack pre (x::suf) cur_val xs
-         | x :: xs -> rpack (suf::pre) [x] x xs
-    in match lst with
-      | [] -> []
-      | x :: xs -> rpack [] [x] x xs
+  let rec rpack pre suf cur_val lst =
+     match lst with
+       | [] -> rev (suf :: pre)
+       | x :: xs when x = cur_val -> rpack pre (x::suf) cur_val xs
+       | x :: xs -> rpack (suf::pre) [x] x xs
+  in match lst with
+    | [] -> []
+    | x :: xs -> rpack [] [x] x xs
 ;;
 
 (* Tests all cases *)

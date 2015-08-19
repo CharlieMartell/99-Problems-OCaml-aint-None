@@ -7,13 +7,16 @@ Examples from the book
   [(4, "a"); (1, "b"); (2, "c"); (2, "a"); (1, "d"); (4, "e")]
 *)
 
+(* Helper function from prior exercise *)
+let rev l =
+  let rec rrev rest = function
+    | [] -> rest
+    | x :: xs -> rrev (x::rest) xs
+  in rrev [] l
+;;
+
+(* Main function *)
 let encode lst =
-  let rev l =
-    let rec rrev rest = function
-      | [] -> rest
-      | x :: xs -> rrev (x::rest) xs
-    in rrev [] l
-  in 
     let rec rencode sum lst =
       match sum, lst with
         | _, [] -> sum
