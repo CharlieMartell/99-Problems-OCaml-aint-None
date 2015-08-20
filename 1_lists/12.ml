@@ -1,4 +1,4 @@
-(* Decuode a Modified Run-length encoding list. *)
+(* Decode a Modified Run-length encoding list. *)
 
 (* Default type for modified run length encoding *)
 type 'a rle =
