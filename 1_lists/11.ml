@@ -63,8 +63,7 @@ let encode lst =
         | [] -> []
         | ([] :: xs) -> rencode xs
         | ((x :: []) :: xs) -> (One x) :: (rencode xs)
-        | (x :: xs) -> (
-          Many (length x, hd x)) :: (rencode xs)
+        | (x :: xs) -> (Many (length x, hd x)) :: (rencode xs)
       in rencode( pack (lst))
 ;;
 
