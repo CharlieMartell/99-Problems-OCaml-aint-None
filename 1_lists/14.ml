@@ -10,7 +10,7 @@ Examples from the book
 let rec duplicate lst = 
   match lst with
   | [] -> []
-  | x :: xs -> x :: x :: duplicate xs
+  | x :: xs -> x :: [x] @ duplicate xs
 ;;
 
 (* Tests all cases *)
